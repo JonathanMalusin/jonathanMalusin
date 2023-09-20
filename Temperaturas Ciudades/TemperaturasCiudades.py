@@ -134,3 +134,36 @@ for ciudad in range(num_ciudades):
             suma_temperaturas += temperaturas[ciudad][semana][dia]["temp"]
         promedio_temperaturas = suma_temperaturas / num_dias
         print(f"Promedio de temperaturas en Ciudad {ciudad + 1}, Semana {semana + 1}: {promedio_temperaturas:.2f}°C")
+
+# Definición y uso de funciones en programación
+def CalcularPromedioCiudad(temperaturas, ciudad):
+    # Obtener el número de semanas y días de la matriz de temperaturas
+    num_semanas = len(temperaturas[0])
+    num_dias = len(temperaturas[0][0])
+    
+    # Verificar si el número de ciudad es válido
+    if ciudad < 1 or ciudad > len(temperaturas):
+        return "Ciudad no válida"
+
+    # Inicializar una lista para almacenar los promedios de cada semana
+    promedios_semana = []
+    
+    # Iterar a través de las semanas
+    for semana in range(num_semanas):
+        suma_temperaturas = 0
+        
+        # Iterar a través de los días de la semana
+        for dia in range(num_dias):
+            # Sumar las temperaturas de cada día de la semana
+            suma_temperaturas += temperaturas[ciudad - 1][semana][dia]["temp"]
+        
+        # Calcular el promedio de temperatura de la semana y agregarlo a la lista
+        promedio_semana = suma_temperaturas / num_dias
+        promedios_semana.append(promedio_semana)
+
+    # Devolver la lista de promedios de temperatura para cada semana
+    return promedios_semana
+
+
+
+
