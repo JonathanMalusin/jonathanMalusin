@@ -14,4 +14,4 @@ with open("my_notes.txt", "r") as archivo:
         print(line.strip())  # strip() elimina el salto de línea al final de cada línea
         line = archivo.readline()
 
-# Cierre del archivo (no es necesario debido al uso de 'with open', pero es una buena práctica)
+# Cierre del archivo (no es necesario debido al uso de 'with open', pero es una buena práctica de programación)
